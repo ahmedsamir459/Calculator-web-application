@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="app.component.css">
+  <title>My Calculator</title>
+
+</head>
+<body>
+  <div class="mycalc">
+    <div class="display1">{{displayedValue1}}</div>
+    <div class="display">{{displayedValue}}</div>
+
+    <div class="all_btn">
+      <div class="all_btn_extra">
+        <button class="sbtn"[disabled]="disableall()"(click)="unioperation('precent','%')">%</button>
+        <button class="sbtn"(click)="delete()">CE</button>
+        <button class="sbtn"(click)="delete()">C</button>
+        <button class="sbtn"[disabled]="disableall()"(click)="del()">DEL</button>
+        <button class="sbtn"[disabled]="disableall()"(click)="unioperation('trans','/')">1/x</button>
+        <button class="sbtn"[disabled]="disableall()"(click)="unioperation('sqr','^2')">x^2</button>
+        <button class="sbtn"[disabled]="disableall()"(click)="unioperation('sqrt','2√')">2√x</button>
+        <button class="sbtn"[disabled]="disableall()"(click)="setOperation('div', '/')">÷</button>
+      </div>
+      <div class="all_btn_number">
+        <button class="btn"[disabled]="disableall()"(click)="click('7')">7</button>
+        <button class="btn"[disabled]="disableall()"(click)="click('8')">8</button>
+        <button class="btn"[disabled]="disableall()"(click)="click('9')">9</button>
+        <button class="sbtn"[disabled]="disableall()"(click)="setOperation('mult', '*')">X</button>
+        <button class="btn"[disabled]="disableall()"(click)="click('4')">4</button>
+        <button class="btn"[disabled]="disableall()"(click)="click('5')">5</button>
+        <button class="btn"[disabled]="disableall()"(click)="click('6')">6</button>
+        <button class="sbtn"[disabled]="disableall()"(click)="setOperation('sub', '-')">-</button>
+        <button class="btn"[disabled]="disableall()"(click)="click('1')">1</button>
+        <button class="btn"[disabled]="disableall()"(click)="click('2')">2</button>
+        <button class="btn"[disabled]="disableall()"(click)="click('3')">3</button>
+        <button class="sbtn"[disabled]="disableall()"(click)="setOperation('add', '+')">+</button>
+        <button class="btn"[disabled]="disableall()"(click)="sign()">+/-</button>
+        <button class="btn"[disabled]="disableall()"(click)="click('0')">0</button>
+        <button class="btn"[disabled]="pointDisable()" (click)="insertPoint()">.</button>
+        <button class="btn" id="equal" (click)="result()">=</button>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
